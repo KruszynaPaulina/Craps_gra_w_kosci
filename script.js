@@ -8,10 +8,14 @@ var dotrad = 6;
 var ctx;
 var dx;
 var dy;
+var firstturn = true;
+var point;
 
 function throwdice() {
 
+	var sum;
 	var ch = 1 + Math.floor(Math.random() * 6);
+	sum = ch;
 
 	dx = dicex;
 	dy = dicey;
@@ -21,8 +25,43 @@ function throwdice() {
 	dx = dicex + 150;
 
 	ch = 1 + Math.floor(Math.random() * 6);
+	sum += ch;
 
 	drawface(ch);
+
+	if (firstturn) {
+		switch(sum) {
+			case 7:
+			case 11:
+				document.f.outcome.value="Wygrałeś!";
+				break;
+			case 2:
+			case 3:
+			case 12:
+				document.f.outcome.value="Przegrałeś!";
+				break;
+			default:
+				point = sum;
+				document.f.pv.value=point;
+				firstturn = false;
+				document.f.stage.value="Rzucaj jeszcze raz!";
+				document.f.outcome.value="";
+		}
+	} else {
+		switch(sum) {
+			case point:
+				document.f.outcome.value="Wygrałeś!";
+				document.f.stage.value="Pierwszy rzut.";
+				document.f.pv.value="";
+				firstturn = true;
+				break;
+			case 7:
+				document.f.outcome.value="Przegrałeś!";
+				document.f.stage.value="Pierwszy rzut.";
+				document.f.pv.value="";
+				firstturn = true;
+		}
+	}
 
 }
 

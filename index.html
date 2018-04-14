@@ -1,6 +1,6 @@
 <html>
 	<head>
-	<title>Rzut dwiema kośćmi</title>
+		<title>Gra w kości</title>
 	</head>
 	<body>
 		<canvas id="canvas" width="400" height="300">
@@ -8,6 +8,11 @@
 		</canvas>
 		<br/>
 		<button onClick="throwdice();">Rzuć kośćmi</button>
+		<form name="f">
+			Etap: <input name="stage" value="Pierwszy rzut"/>
+			Punkty: <input name="pv" value=""/>
+			Wynik: <input name="outcome" value=""/>
+		</form>
 
 		<script src="script.js"></script>
 	</body>
