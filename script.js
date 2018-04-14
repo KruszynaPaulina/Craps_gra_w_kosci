@@ -1,16 +1,28 @@
 var cwidth = 400; 
 var cheight = 300;
 var dicex = 50; 
-var dicey = 50; 
+var dicey = 50;
 var dicewidth = 100; 
 var diceheight = 100;
 var dotrad = 6;
 var ctx;
+var dx;
+var dy;
 
-function init () {
+function throwdice() {
 
 	var ch = 1 + Math.floor(Math.random() * 6);
-	drawface(ch); 
+
+	dx = dicex;
+	dy = dicey;
+
+	drawface(ch);
+
+	dx = dicex + 150;
+
+	ch = 1 + Math.floor(Math.random() * 6);
+
+	drawface(ch);
 
 }
 
@@ -18,8 +30,10 @@ function drawface(n) {
 
 	ctx = document.getElementById('canvas').getContext('2d');
 	ctx.lineWidth = 5;
-	ctx.clearRect(dicex, dicey, dicewidth, diceheight);
-	ctx.strokeRect(dicex, dicey, dicewidth, diceheight);
+	ctx.clearRect(dx, dy, dicewidth, diceheight);
+	ctx.strokeRect(dx, dy, dicewidth, diceheight);
+	var dotx;
+	var doty;
 	ctx.fillStyle = "#009966";
 
 	switch(n) {
@@ -55,8 +69,8 @@ function draw1() {
 
 	ctx.beginPath();
 
-	dotx = dicex + .5 * dicewidth;
-	doty = dicey + .5 * diceheight;
+	dotx = dx + .5 * dicewidth;
+	doty = dy + .5 * diceheight;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 	ctx.closePath();
@@ -71,13 +85,13 @@ function draw2() {
 
 	ctx.beginPath();
 
-	dotx = dicex + 3 * dotrad;
-	doty = dicey + 3 * dotrad;
+	dotx = dx + 3 * dotrad;
+	doty = dy + 3 * dotrad;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
-	dotx = dicex + dicewidth - 3 * dotrad;
-	doty = dicey + diceheight - 3 * dotrad;
+	dotx = dx + dicewidth - 3 * dotrad;
+	doty = dy + diceheight - 3 * dotrad;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 	ctx.closePath();
@@ -92,13 +106,13 @@ function draw4() {
 
 	ctx.beginPath();
 
-	dotx = dicex + 3 * dotrad;
-	doty = dicey + 3 * dotrad;
+	dotx = dx + 3 * dotrad;
+	doty = dy + 3 * dotrad;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
-	dotx = dicex + dicewidth - 3 * dotrad;
-	doty = dicey + diceheight - 3 * dotrad;
+	dotx = dx + dicewidth - 3 * dotrad;
+	doty = dy + diceheight - 3 * dotrad;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
@@ -107,13 +121,13 @@ function draw4() {
 
 	ctx.beginPath();
 
-	dotx = dicex + 3 * dotrad;
-	doty = dicey + diceheight - 3 * dotrad;
+	dotx = dx + 3 * dotrad;
+	doty = dy + diceheight - 3 * dotrad;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
-	dotx = dicex + dicewidth - 3 * dotrad;
-	doty = dicey + 3 * dotrad;
+	dotx = dx + dicewidth - 3 * dotrad;
+	doty = dy + 3 * dotrad;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
@@ -129,13 +143,13 @@ function draw2mid() {
 
 	ctx.beginPath();
 
-	dotx = dicex + 3 * dotrad;
-	doty = dicey + .5 * diceheight;
+	dotx = dx + 3 * dotrad;
+	doty = dy + .5 * diceheight;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
-	dotx = dicex + dicewidth - 3 * dotrad;
-	doty = dicey + .5 * diceheight;
+	dotx = dx + dicewidth - 3 * dotrad;
+	doty = dy + .5 * diceheight;
 
 	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
 
