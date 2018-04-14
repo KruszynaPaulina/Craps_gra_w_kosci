@@ -64,3 +64,24 @@ function draw1() {
 
 }
 
+function draw2() {
+
+	var dotx;
+	var doty;
+
+	ctx.beginPath();
+
+	dotx = dicex + 3 * dotrad;
+	doty = dicey + 3 * dotrad;
+
+	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
+
+	dotx = dicex + dicewidth - 3 * dotrad;
+	doty = dicey + diceheight - 3 * dotrad;
+
+	ctx.arc(dotx, doty, dotrad, 0, Math. PI * 2, true);
+	ctx.closePath();
+	ctx.fill();
+
+}
+
