@@ -6,3 +6,11 @@ var dicewidth = 100;
 var diceheight = 100;
 var dotrad = 6;
 var ctx;
+
+function init () {
+
+	var ch = 1 + Math.floor(Math.random() * 6);
+	drawface(ch); 
+
+}
+
