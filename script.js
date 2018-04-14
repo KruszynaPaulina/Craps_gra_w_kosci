@@ -14,3 +14,37 @@ function init () {
 
 }
 
+function drawface(n) {
+
+	ctx = document.getElementById('canvas').getContext('2d');
+	ctx.lineWidth = 5;
+	ctx.clearRect(dicex, dicey, dicewidth, diceheight);
+	ctx.strokeRect(dicex, dicey, dicewidth, diceheight);
+	ctx.fillStyle = "#009966";
+
+	switch(n) {
+		case 1:
+			draw1();
+			break;
+		case 2:
+			draw2();
+			break;
+		case 3:
+			draw2();
+			draw1();
+			break;
+		case 4:
+			draw4();
+			break;
+		case 5:
+			draw4();
+			draw1();
+			break;
+		case 6: 
+			draw4();
+			draw2mid();
+			break;
+	}
+
+}
+
