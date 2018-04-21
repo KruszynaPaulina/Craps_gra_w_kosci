@@ -11,5 +11,6 @@ Gracz rzuca dwiema kostkami. Liczy się suma oczek, zatem 1 i 3 daje ten sam wyn
 Rozwiązania, tchnologie i narzędzia:
 - HTML 5
 - CSS 3
+- RWD
 - JavaScript
 - Canvas
