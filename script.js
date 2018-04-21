@@ -1,7 +1,33 @@
-var cwidth = 400; 
-var cheight = 300;
+var instructionBtn = document.getElementById('instruction');
+var info = document.getElementById('info');
+var end = document.getElementById('end');
+var start = document.getElementById('start');
+var canvas = document.getElementById('canvas');
+var imgae = document.getElementById('image');
+var startGame = document.getElementById('startGame');
+var form = document.getElementById('form');
+
+instructionBtn.addEventListener('click', function(e) {
+	info.style.display = 'flex';
+});
+
+end.addEventListener('click', function(e) {
+	info.style.display = 'none';
+});
+
+start.addEventListener('click', function(e) {
+	canvas.style.display = 'block';
+	form.style.display = 'block';
+	image.style.display = 'none';
+	startGame.style.display = 'inline';
+	start.style.display = 'none';
+});
+
+
+var cwidth = 320; 
+var cheight = 120;
 var dicex = 50; 
-var dicey = 50;
+var dicey = 10;
 var dicewidth = 100; 
 var diceheight = 100;
 var dotrad = 6;
@@ -22,7 +48,7 @@ function throwdice() {
 
 	drawface(ch);
 
-	dx = dicex + 150;
+	dx = dicex + 120;
 
 	ch = 1 + Math.floor(Math.random() * 6);
 	sum += ch;
@@ -51,13 +77,12 @@ function throwdice() {
 		switch(sum) {
 			case point:
 				document.f.outcome.value="Wygrałeś!";
-				document.f.stage.value="Pierwszy rzut.";
-				document.f.pv.value="";
+				document.f.stage.value="Zagraj jeszcze raz!"
 				firstturn = true;
 				break;
 			case 7:
 				document.f.outcome.value="Przegrałeś!";
-				document.f.stage.value="Pierwszy rzut.";
+				document.f.stage.value="Zagraj jeszcze raz!";
 				document.f.pv.value="";
 				firstturn = true;
 		}
@@ -68,12 +93,15 @@ function throwdice() {
 function drawface(n) {
 
 	ctx = document.getElementById('canvas').getContext('2d');
-	ctx.lineWidth = 5;
+	ctx.lineWidth = 3;
+	ctx.strokeStyle = "#6f19ce";
 	ctx.clearRect(dx, dy, dicewidth, diceheight);
+	ctx.fillStyle = "#ffffff";
+	ctx.fillRect(dx, dy, dicewidth, diceheight);
 	ctx.strokeRect(dx, dy, dicewidth, diceheight);
 	var dotx;
 	var doty;
-	ctx.fillStyle = "#009966";
+	ctx.fillStyle = "#18ce2e";
 
 	switch(n) {
 		case 1:

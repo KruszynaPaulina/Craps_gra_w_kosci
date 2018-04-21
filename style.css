@@ -1,0 +1,159 @@
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+.body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: #121212;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.title {
+	text-align: center;
+	color: #18ce2e;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 56px;
+	margin-bottom: 0;
+	position: relative;
+	z-index: -1;
+}
+
+.inst {
+	color: #18ce2e;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 36px;
+}
+
+.title::after {
+	content: "";
+	width: 200px;
+	height: 2px;
+	background-color: #ffffff;
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.subtitle {
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top: 0;
+	color: #6f19ce;
+}
+
+.canavas {
+	display: none;
+	margin: 0 auto;
+}
+
+.startGame {
+	display: none;
+}
+
+.form {
+	display: none;
+	background-color: #6f19ce;
+	padding: 5px 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.buttons {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.cube {
+	width: 100%;
+}
+
+.image {
+	width: 30%;
+	margin: 0 auto;
+}
+
+.info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #ffffff;
+	background-color: #121212;
+	display: none;
+}
+
+.ins {
+	margin: 0 20px;
+	text-align: center;
+	font-size: 17px;
+	width: 50%;
+}
+
+.btn { 
+	background-color: #18ce2e;
+	border: 2px solid #18ce2e;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0 5px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	color: #18ce2e;
+	background-color: transparent;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.end {
+	margin-top: 50px;
+}
+
+.inp {
+	margin: 5px 0;
+	cursor: default;
+}
+
+.in {
+	background-color: transparent;
+	border: none;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	cursor: default;
+}
+
+.in:focus {
+	outline: none;
+}
+
+@media (max-width: 800px) {
+
+	.ins {
+		width: 70%;
+	}
+
+}
+
+@media (max-width: 450px) {
+
+	.ins {
+		width: 90%;
+	}
+
+}
