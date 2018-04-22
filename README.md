@@ -1,6 +1,6 @@
-# craps_gra_w_kosci
+# Craps_gra_w_kosci
 
-https://kruszynapaulina.github.io/craps_gra_w_kosci
+https://kruszynapaulina.github.io/Craps_gra_w_kosci
 
 Opis: 
 Craps - gra w kości wykonana w czystym JavaScripcie. 
